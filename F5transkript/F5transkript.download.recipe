@@ -17,13 +17,20 @@
 	<array>
 		<dict>
 			<key>Arguments</key>
-			<dict/>
+			<dict>
+				<key>url</key>
+				<string>https://www.audiotranskription.de/downloads.html</string>
+				<key>re_pattern</key>
+				<string>a.*?href=\"(.+?)\">.*r Mac</string>
+			</dict>
 			<key>Processor</key>
-			<string>F5transkriptURLProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>url</key>
+				<string>https://www.audiotranskription.de%match%</string>
 				<key>filename</key>
 				<string>f5.zip</string>
 			</dict>
