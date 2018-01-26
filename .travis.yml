@@ -41,7 +41,7 @@ install:
 - defaults write com.github.autopkg MUNKI\_REPO /Users/travis/munkiRepo
 - ls -lah
 script:
-- autopkg run -v --recipe-list=runlist.txt
+- autopkg run -vvvv --recipe-list=runlist.txt
 
 env:
   global:
