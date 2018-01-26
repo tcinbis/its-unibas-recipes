@@ -1,44 +1,48 @@
 os: osx
 install:
-  - curl -LJO https://github.com/autopkg/autopkg/releases/download/v1.0.3/autopkg-1.0.3.pkg
-  - curl -LJO https://github.com/munki/munki/releases/download/v3.1.1/munkitools-3.1.1.3447.pkg
-  - sudo installer -verbose -pkg "autopkg-1.0.3.pkg" -target /
-  - sudo installer -verbose -pkg "munkitools-3.1.1.3447.pkg" -target /
-  - autopkg repo-add https://github.com/autopkg/its-unibas-recipes
-  - autopkg repo-add autopkg/recipes
-  - autopkg repo-add autopkg/hjuutilainen-recipes
-  - autopkg repo-add autopkg/homebysix-recipes
-  - autopkg repo-add autopkg/rtrouton-recipes
-  - autopkg repo-add autopkg/timsutton-recipes
-  - autopkg repo-add autopkg/scriptingosx-recipes
-  - autopkg repo-add autopkg/nmcspadden-recipes
-  - autopkg repo-add autopkg/andrewvalentine-recipes
-  - autopkg repo-add autopkg/grahamgilbert-recipes
-  - autopkg repo-add autopkg/hansen-m-recipes
-  - autopkg repo-add autopkg/jbaker10-recipes
-  - autopkg repo-add autopkg/jessepeterson-recipes
-  - autopkg repo-add autopkg/joshua-d-miller-recipes
-  - autopkg repo-add autopkg/novaksam-recipes
-  - autopkg repo-add autopkg/killahquam-recipes
-  - autopkg repo-add autopkg/jleggat-recipes
-  - autopkg repo-add autopkg/thenikola-recipes
-  - autopkg repo-add autopkg/arubdesu-recipes
-  - autopkg repo-add autopkg/gregneagle-recipes
-  - autopkg repo-add autopkg/keeleysam-recipes
-  - autopkg repo-add autopkg/golbiga-recipes
-  - autopkg repo-add autopkg/n8felton-recipes
-  - autopkg repo-add autopkg/timsutton-recipes
-  - autopkg repo-add autopkg/prochat-recipes
-  - autopkg repo-add autopkg/tbridge-recipes
-  - autopkg repo-add autopkg/justinrummel-recipes
-  - autopkg repo-add autopkg/foigus-recipes
-  - mkdir /Users/travis/munkiRepo
-  - mkdir /Users/travis/munkiRepo/catalogs
-  - mkdir /Users/travis/munkiRepo/icons
-  - mkdir /Users/travis/munkiRepo/manifests
-  - mkdir -p /Users/travis/munkiRepo/pkgs/apps
-  - mkdir -p /Users/travis/munkiRepo/pkgsinfo/apps
-  - defaults write com.github.autopkg MUNKI\_REPO /Users/travis/munkiRepo
-  - ls -lah
+- curl -LJO https://github.com/autopkg/autopkg/releases/download/v1.0.3/autopkg-1.0.3.pkg
+- curl -LJO https://github.com/munki/munki/releases/download/v3.1.1/munkitools-3.1.1.3447.pkg
+- sudo installer -verbose -pkg "autopkg-1.0.3.pkg" -target /
+- sudo installer -verbose -pkg "munkitools-3.1.1.3447.pkg" -target /
+- autopkg repo-add https://github.com/autopkg/its-unibas-recipes
+- autopkg repo-add autopkg/recipes
+- autopkg repo-add autopkg/hjuutilainen-recipes
+- autopkg repo-add autopkg/homebysix-recipes
+- autopkg repo-add autopkg/rtrouton-recipes
+- autopkg repo-add autopkg/timsutton-recipes
+- autopkg repo-add autopkg/scriptingosx-recipes
+- autopkg repo-add autopkg/nmcspadden-recipes
+- autopkg repo-add autopkg/andrewvalentine-recipes
+- autopkg repo-add autopkg/grahamgilbert-recipes
+- autopkg repo-add autopkg/hansen-m-recipes
+- autopkg repo-add autopkg/jbaker10-recipes
+- autopkg repo-add autopkg/jessepeterson-recipes
+- autopkg repo-add autopkg/joshua-d-miller-recipes
+- autopkg repo-add autopkg/novaksam-recipes
+- autopkg repo-add autopkg/killahquam-recipes
+- autopkg repo-add autopkg/jleggat-recipes
+- autopkg repo-add autopkg/thenikola-recipes
+- autopkg repo-add autopkg/arubdesu-recipes
+- autopkg repo-add autopkg/gregneagle-recipes
+- autopkg repo-add autopkg/keeleysam-recipes
+- autopkg repo-add autopkg/golbiga-recipes
+- autopkg repo-add autopkg/n8felton-recipes
+- autopkg repo-add autopkg/timsutton-recipes
+- autopkg repo-add autopkg/prochat-recipes
+- autopkg repo-add autopkg/tbridge-recipes
+- autopkg repo-add autopkg/justinrummel-recipes
+- autopkg repo-add autopkg/foigus-recipes
+- mkdir /Users/travis/munkiRepo
+- mkdir /Users/travis/munkiRepo/catalogs
+- mkdir /Users/travis/munkiRepo/icons
+- mkdir /Users/travis/munkiRepo/manifests
+- mkdir /Users/travis/munkiRepo/pkgs
+- mkdir /Users/travis/munkiRepo/pkgsinfo
+- defaults write com.github.autopkg MUNKI\_REPO /Users/travis/munkiRepo
+- ls -lah
 script:
-  - autopkg run -v --recipe-list=runlist.txt
+- autopkg run -v --recipe-list=runlist.txt
+
+env:
+  global:
+    secure: BHVoKFpMVmnb8gBSfktq1dBB2l58hiONUeIhqTYudfHSPlLyq6CTpxL6bYah0eetgfo0E/KzHQ6dmOEX6yBlAAKkBCHb59SxbS6DgAbacl7v5ojNpCqk00l/32JKVOw7X0ZBFzyIXXOceg+PNKuTnWYzXDfIUx8Ncmqk/+prIx6DqiAsxZ7dWXAauSLfxoguSr5tTUwHaObP3fTDCVpNmLxxf1b7pb7XwG5REbUIVo33QIW5NQnFBew4R6H7Fwk+//mh/Y+GbaN7z5xHw2coRQY7UZI6YTO2/Iz118rlDAbIpmRqk14bOinrZbcKOwDlugQmnLiwr1J1OgLDZF1OlwgP4VIdvva0VyAoOySagrcGDSgjnutbWtbN3LgPbJG7RWXieb3cuW0LyU6Ys1fuCu2RWoHbi2cZkQsFyHksQ3A98iFvZ0qiaDaYVO/2BIYuzeGlc2jneYuwybrvWKUMttU13BWm3RR1XhNcdHT+21n4w5XA9Xa1rEX4TV3l1MrvcdGm11Z6tFhEspVlE0RETQ/9RlZyp4JC4pSLMQ5P00TDfMDUMpD/QqSVinI1T0t/y3oHFqbDH8a6+jdJq2KEjvTYCQNScCK3e1sHPh8tbTIKcI2eUThueY+Y4R2iZxbEKYynct1OrleOYhtHrajGrKNFXv4+78lyQk0ZxnVmzS4=
