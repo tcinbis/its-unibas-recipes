@@ -1,5 +1,7 @@
+language: python
 os: osx
 install:
-  - brew install autopkg
+  - curl -LJO https://github.com/autopkg/autopkg/releases/download/v1.0.3/autopkg-1.0.3.pkg
+  - install autopkg-1.0.3.pkg
 script:
   autopkg run Intellij.munki
