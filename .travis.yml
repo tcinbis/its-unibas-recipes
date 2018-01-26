@@ -30,8 +30,9 @@ install:
   - autopkg repo-add autopkg/tbridge-recipes
   - autopkg repo-add autopkg/justinrummel-recipes
   - autopkg repo-add autopkg/foigus-recipes
-  - mkdir $(HOME)/munkiRepo
-  - defaults write com.github.autopkg MUNKI\_REPO $(HOME)/munkiRepo
-  - ls -lah 
+  - mkdir /Users/travis/munkiRepo
+  - defaults write com.github.autopkg MUNKI\_REPO /Users/travis/munkiRepo
+  - ls -lah
 script:
-  autopkg run Intellij.munki
+  - autopkg run -vv Firefox.pkg
+  - autopkg run -vv Firefox.munki
