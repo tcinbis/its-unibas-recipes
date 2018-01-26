@@ -4,7 +4,7 @@ install:
   - curl -LJO https://github.com/munki/munki/releases/download/v3.1.1/munkitools-3.1.1.3447.pkg
   - sudo installer -verbose -pkg "autopkg-1.0.3.pkg" -target /
   - sudo installer -verbose -pkg "munkitools-3.1.1.3447.pkg" -target /
-  - autopkg repo-add https://github.com/ITS-Unibas/autopkg-recipes.git
+  - autopkg repo-add https://github.com/autopkg/its-unibas-recipes
   - autopkg repo-add autopkg/recipes
   - autopkg repo-add autopkg/hjuutilainen-recipes
   - autopkg repo-add autopkg/homebysix-recipes
