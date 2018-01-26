@@ -34,10 +34,10 @@ install:
   - mkdir /Users/travis/munkiRepo/catalogs
   - mkdir /Users/travis/munkiRepo/icons
   - mkdir /Users/travis/munkiRepo/manifests
-  - mkdir /Users/travis/munkiRepo/pkgs
-  - mkdir /Users/travis/munkiRepo/pkgsinfo
+  - mkdir -p /Users/travis/munkiRepo/pkgs/apps
+  - mkdir -p /Users/travis/munkiRepo/pkgsinfo/apps
   - defaults write com.github.autopkg MUNKI\_REPO /Users/travis/munkiRepo
   - ls -lah
 script:
-  - autopkg run -vv Firefox.pkg
-  - autopkg run -vv Firefox.munki
+  - autopkg run -vvvv Firefox.pkg
+  - autopkg run -vvvv Firefox.munki
