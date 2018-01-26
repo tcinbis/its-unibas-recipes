@@ -31,6 +31,11 @@ install:
   - autopkg repo-add autopkg/justinrummel-recipes
   - autopkg repo-add autopkg/foigus-recipes
   - mkdir /Users/travis/munkiRepo
+  - mkdir /Users/travis/munkiRepo/catalogs
+  - mkdir /Users/travis/munkiRepo/icons
+  - mkdir /Users/travis/munkiRepo/manifests
+  - mkdir /Users/travis/munkiRepo/pkgs
+  - mkdir /Users/travis/munkiRepo/pkgsinfo
   - defaults write com.github.autopkg MUNKI\_REPO /Users/travis/munkiRepo
   - ls -lah
 script:
