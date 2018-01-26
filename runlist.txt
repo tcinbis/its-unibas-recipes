@@ -1,0 +1,7 @@
+com.github.its-unibas.munki.switchdrive
+com.github.its-unibas.munki.switchcastrecorder
+com.github.its-unibas.munki.PyMOL
+com.github.its-unibas.munki.Karabiner
+com.github.its-unibas.munki.F5transkript
+com.github.its-unibas.munki.Anaconda
+com.github.its-unibas.munki.ants_client

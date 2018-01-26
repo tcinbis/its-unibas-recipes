@@ -41,4 +41,4 @@ install:
   - defaults write com.github.autopkg MUNKI\_REPO /Users/travis/munkiRepo
   - ls -lah
 script:
-  - autopkg run -vvvv Firefox.munki
+  - autopkg run -v --recipe-list=runlist.txt
