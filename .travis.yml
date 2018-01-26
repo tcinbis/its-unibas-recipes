@@ -2,5 +2,38 @@ os: osx
 install:
   - curl -LJO https://github.com/autopkg/autopkg/releases/download/v1.0.3/autopkg-1.0.3.pkg
   - sudo installer -verbose -pkg "autopkg-1.0.3.pkg" -target /
+  - autopkg repo-add https://github.com/ITS-Unibas/autopkg-recipes.git
+  - autopkg repo-add autopkg/recipes
+  - autopkg repo-add autopkg/hjuutilainen-recipes
+  - autopkg repo-add autopkg/homebysix-recipes
+  - autopkg repo-add autopkg/rtrouton-recipes
+  - autopkg repo-add autopkg/timsutton-recipes
+  - autopkg repo-add autopkg/scriptingosx-recipes
+  - autopkg repo-add autopkg/nmcspadden-recipes
+  - autopkg repo-add autopkg/andrewvalentine-recipes
+  - autopkg repo-add autopkg/grahamgilbert-recipes
+  - autopkg repo-add autopkg/hansen-m-recipes
+  - autopkg repo-add autopkg/jbaker10-recipes
+  - autopkg repo-add autopkg/jessepeterson-recipes
+  - autopkg repo-add autopkg/joshua-d-miller-recipes
+  - autopkg repo-add autopkg/novaksam-recipes
+  - autopkg repo-add autopkg/killahquam-recipes
+  - autopkg repo-add autopkg/jleggat-recipes
+  - autopkg repo-add autopkg/thenikola-recipes
+  - autopkg repo-add autopkg/arubdesu-recipes
+  - autopkg repo-add autopkg/gregneagle-recipes
+  - autopkg repo-add autopkg/keeleysam-recipes
+  - autopkg repo-add autopkg/golbiga-recipes
+  - autopkg repo-add autopkg/n8felton-recipes
+  - autopkg repo-add autopkg/timsutton-recipes
+  - autopkg repo-add autopkg/prochat-recipes
+  - autopkg repo-add autopkg/tbridge-recipes
+  - autopkg repo-add autopkg/justinrummel-recipes
+  - autopkg repo-add autopkg/foigus-recipes
+  - ln -sh $(PWD)/Recipes $(HOME)/Library/AutoPkg/Recipes
+  - ln -sh $(PWD)/RecipeOverrides $(HOME)/Library/AutoPkg/RecipeOverrides
+  - mkdir $(HOME)/munkiRepo
+  - defaults write com.github.autopkg MUNKI\_REPO $(HOME)/munkiRepo
+  - defaults write com.github.autopkg RECIPE\_SEARCH\_DIRS -array-add "$(PWD)/RecipeOverrides"
 script:
   autopkg run Intellij.munki
