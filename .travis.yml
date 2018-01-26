@@ -1,0 +1,5 @@
+os: osx
+install:
+  - brew install autopkg
+script:
+  autopkg run Intellij.munki
