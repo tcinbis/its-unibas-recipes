@@ -30,10 +30,8 @@ install:
   - autopkg repo-add autopkg/tbridge-recipes
   - autopkg repo-add autopkg/justinrummel-recipes
   - autopkg repo-add autopkg/foigus-recipes
-  - ln -sh $(PWD)/Recipes $(HOME)/Library/AutoPkg/Recipes
-  - ln -sh $(PWD)/RecipeOverrides $(HOME)/Library/AutoPkg/RecipeOverrides
   - mkdir $(HOME)/munkiRepo
   - defaults write com.github.autopkg MUNKI\_REPO $(HOME)/munkiRepo
-  - defaults write com.github.autopkg RECIPE\_SEARCH\_DIRS -array-add "$(PWD)/RecipeOverrides"
+  - ls -lah 
 script:
   autopkg run Intellij.munki
