@@ -4,6 +4,7 @@ install:
 - git clone https://github.com/autopkg/autopkg.git
 - cd autopkg
 - sudo Scripts/install.sh
+- cd ..
 - defaults write com.githuab.autopkg GITHUB_TOKEN  f874a9eea15b83466555d587f819f9eaa5bc93de
 - curl -LJO https://github.com/munki/munki/releases/download/v3.1.1/munkitools-3.1.1.3447.pkg
 #- sudo installer -verbose -pkg "autopkg-1.0.3.pkg" -target /
